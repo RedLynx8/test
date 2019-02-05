@@ -1,0 +1,52 @@
+.sorting-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.sorting-type {
+    width: 90px;
+    margin: 0 20px 20px 0;
+    background-color: lightseagreen;
+    color: azure;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.sorting-arrow:after {
+    content: '\25b2';
+    font-size: 10px;
+}
+
+.sorting-arrow.reverse:after {
+    content: '\25bc';
+    font-size: 10px;
+}
+
+.event-container {
+    margin-top: 10px;
+}
+
+.event {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.event-name {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.event-tran-in {
+    color: darkgreen;
+}
+
+.event-tran-out {
+    color: red;
+}
+
+.event-not-viewed {
+    background-color: lightcyan;
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>AngularJS Test</title>
+        <script>document.write('<base href="' + document.location + '" />');</script>
+        <link rel="stylesheet" href="common/main-styles.css"/>
+        <link rel="stylesheet" href="common/events-styles.css"/>
+        <link rel="stylesheet" href="home/home.css"/>
+        <script src="angular/angular.min.js"></script>
+        <script src="angular/angular-route.min.js"></script>
+        <script src="angular/angular-sanitize.min.js"></script>
+        <script src="common/route.config.js"></script>
+        <script src="models/event-base.js"></script>
+        <script src="models/news-event.js"></script>
+        <script src="models/transactions-event.js"></script>
+        <script src="services/events.service.js"></script>
+        <script src="navigation.controller.js"></script>
+        <script src="home/home.controller.js"></script>
+        <script src="news/add/add-news-event.controller.js"></script>
+        <script src="news/view/view-news-event.controller.js"></script>
+        <script src="transactions/add/add-transaction-event.controller.js"></script>
+        <script src="transactions/view/view-transaction-event.controller.js"></script>
+    </head>
+
+    <body ng-app="sampleApp" ng-cloak>
+        <div class="main" ng-controller="NavigationController">
+            <div class="nav-bar">
+                <div class="nav-item clickable" ng-repeat="route in routes" ng-click="route.link ? toLink(route.link) : ''">
+                    {{ route.title }}
+                </div>
+            </div>
+
+            <div class="view" ng-view></div>
+        </div>
+    </body>
+</html>

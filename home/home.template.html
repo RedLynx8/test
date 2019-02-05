@@ -1,0 +1,28 @@
+<div class="sorting-bar">
+    <div class="sorting-type clickable" ng-click="sortBy('created_at')">
+        по дате
+        <span ng-if="propertyName === 'created_at'" class="sorting-arrow" ng-class="{ reverse: reverse }"></span>
+    </div>
+
+    <div class="sorting-type clickable" ng-click="sortBy('type')">
+        по типу
+        <span ng-if="propertyName === 'type'" class="sorting-arrow" ng-class="{ reverse: reverse }"></span>
+    </div>
+
+</div>
+
+<div ng-repeat="event in events | orderBy:propertyName:reverse" class="event-container">
+    <div ng-switch="event.type">
+        <div ng-switch-when="transaction" ng-click="toViewTransaction(event.id)" class="event clickable">
+            <div class="event-name">Транзакция:</div>
+            {{ event.created_at | date: 'dd.MM.yyyy' }}
+            <span ng-class="{ 'event-tran-in': event.sign === '+', 'event-tran-out': event.sign === '-' }">{{ event.sign }}{{ event.sum }}</span>
+            {{ event.cur }} от: {{ event.from }} кому: {{ event.to }}
+        </div>
+
+        <div ng-switch-when="news" ng-click="toViewNews(event.id)" class="event clickable" ng-class="{ 'event-not-viewed': !event.viewed }">
+            <div class="event-name">Новость:</div>
+            {{ event.title }}
+        </div>
+    </div>
+</div>

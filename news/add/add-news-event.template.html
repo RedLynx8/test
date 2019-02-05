@@ -1,0 +1,27 @@
+<div class="event-title">Добавить новость</div>
+
+<div class="delimiter"></div>
+
+<form name="addNewsForm" ng-submit="saveItem()">
+    <div class="field">
+        <label class="field-name" for="title">Заголовок:</label>
+        <input type="text" class="field-data" id="title" required ng-model="item.title">
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="content">Содержание:</label>
+        <textarea class="field-data field-textarea" ng-model="item.content" id="content"></textarea>
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="created_at">Дата:</label>
+        <input class="field-data" id="created_at" type="date" required
+               placeholder="dd/MM/yyyy" min="2019-01-01" max="2019-12-31"
+               ng-model="item.created_at"
+        >
+    </div>
+
+    <div class="field">
+        <input type="submit" class="event-button clickable" value="Отправить">
+    </div>
+</form>

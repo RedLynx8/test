@@ -1,0 +1,48 @@
+.event-title {
+    font-size: 22px;
+}
+
+.event-subtitle {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.delimiter {
+    border-bottom: 1px solid whitesmoke;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 25px;
+}
+
+.field:not(:first-child) {
+    margin-top: 15px
+}
+
+.field-name {
+    min-width: 110px;
+    font-style: italic;
+}
+
+.field-data {
+    min-width: 250px;
+    width: calc(100% - 120px);
+}
+
+.field-textarea {
+    border: 1px solid #cccccc;
+    resize: none;
+    min-height: 130px;
+    outline: none;
+    border-radius: 5px;
+}
+
+.event-button {
+    margin-top: 15px;
+    height: 30px;
+}

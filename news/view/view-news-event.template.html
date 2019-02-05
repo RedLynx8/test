@@ -1,0 +1,20 @@
+<div ng-if="viewNews.id">
+    <div class="event-title">{{ viewNews.title }}</div>
+
+    <div class="event-subtitle">{{ viewNews.created_at }}</div>
+
+    <div class="delimiter"></div>
+
+    <div class="field">
+        <div class="field-name">Новость:</div>
+        <div class="field-data" ng-bind-html="viewNews.content"></div>
+    </div>
+
+    <button class="event-button" ng-show="!viewNews.viewed" ng-click="setViewed()">Ознакомлен</button>
+</div>
+
+<div ng-if="!viewNews.id">
+    <div>К сожалению, такой новости не существует</div>
+
+    <button class="event-button clickable" ng-click="goHome()">Вернуться на Главную</button>
+</div>

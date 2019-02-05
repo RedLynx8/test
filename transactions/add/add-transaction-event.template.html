@@ -1,0 +1,51 @@
+<div class="event-title">Добавить транзакцию</div>
+
+<div class="delimiter"></div>
+
+<form name="addNewsForm" ng-submit="saveItem()">
+    <div class="field">
+        <label class="field-name" for="from">От:</label>
+        <input class="field-data" type="text" id="from" required ng-model="item.from">
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="to">Кому:</label>
+        <input class="field-data" type="text" id="to" required ng-model="item.to">
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="sign">Знак:</label>
+        <select class="field-data" id="sign" ng-model="item.sign">
+            <option value="{{ sign.name }}" ng-repeat="sign in signs">{{ sign.name }}</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="sum">Сумма:</label>
+        <input class="field-data" type="number" id="sum" required ng-model="item.sum" min="0">
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="cur">Валюта:</label>
+        <select class="field-data" id="cur" required ng-model="item.cur">
+            <option value="RUB">RUB</option>
+            <option value="USD">USD</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="comment">Комментарий:</label>
+        <textarea class="field-data field-textarea" ng-model="item.comment" id="comment"></textarea>
+    </div>
+
+    <div class="field">
+        <label class="field-name" for="created_at">Дата:</label>
+        <input class="field-data" id="created_at" type="date"
+               placeholder="dd/MM/yyyy" min="2019-01-01" max="2019-12-31" required
+               ng-model="item.created_at">
+    </div>
+
+    <div class="field">
+        <input type="submit" class="event-button clickable" value="Отправить">
+    </div>
+</form>

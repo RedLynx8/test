@@ -1,0 +1,30 @@
+<div ng-if="transaction.id">
+    <div class="event-title">{{ transaction.comment }}</div>
+
+    <div class="event-subtitle">{{ transaction.created_at }}</div>
+
+    <div class="delimiter"></div>
+
+    <div class="field">
+        <div class="field-name">От:</div>
+        <div class="field-data">{{ transaction.from }}</div>
+    </div>
+
+    <div class="field">
+        <div class="field-name">Кому:</div>
+        <div class="field-data">{{ transaction.to }}</div>
+    </div>
+
+    <div class="field">
+        <div class="field-name">Сумма:</div>
+        <div class="field-data">{{ transaction.sign }} {{ transaction.sum }} {{ transaction.cur }}</div>
+    </div>
+
+    <button class="event-button" ng-click="deleteItem()">Удалить</button>
+</div>
+
+<div ng-if="!transaction.id">
+    <div>К сожалению, такой транзакции не существует</div>
+
+    <button class="event-button clickable" ng-click="goHome()">Вернуться на Главную</button>
+</div>
